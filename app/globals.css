@@ -1,0 +1,374 @@
+/* ────────────────────────────────────────────────────────────────
+   Huntsville Hope Classic — Design tokens & base styles
+   Source of truth: Figma "Huntsville Hope Classic.fig" (METADATA.md + frames)
+   ──────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Brand colors ─────────────────────────────────────────────── */
+
+  /* Greens — the Masters fairway */
+  --color-green-900: rgb(15, 31, 20);    /* footer / deepest */
+  --color-green-800: rgb(20, 58, 34);    /* email dark */
+  --color-green-700: rgb(29, 58, 35);    /* PRIMARY DARK — hero buttons, dark sections */
+  --color-green-600: rgb(14, 51, 36);    /* alt brand dark / email accents */
+  --color-green-500: rgb(30, 74, 45);    /* email card variant */
+  --color-sage-500:  rgb(107, 122, 107); /* muted sage text */
+
+  /* Golds — the jacket */
+  --color-gold-700:  rgb(110, 90, 46);   /* gold deep — email eyebrow */
+  --color-gold-600:  rgb(201, 168, 76);  /* gold bright — accent fills */
+  --color-gold-500:  rgb(200, 168, 100); /* gold mid — email dot/divider */
+  --color-gold-400:  rgb(169, 149, 96);  /* PRIMARY GOLD — rules, borders, eyebrows */
+  --color-gold-300:  rgb(212, 201, 168); /* tan border */
+  --color-gold-200:  rgb(229, 220, 198); /* hair border */
+  --color-gold-100:  rgb(199, 191, 168); /* email border */
+
+  /* Creams — the clubhouse linen */
+  --color-cream-50:  rgb(251, 249, 241); /* SURFACE ALT — sponsorship cards bg */
+  --color-cream-100: rgb(247, 243, 230); /* SURFACE PRIMARY — page bg */
+  --color-cream-200: rgb(247, 242, 232); /* email body bg */
+
+  /* Neutrals — derived from green */
+  --color-ink-900:   rgb(11, 11, 11);    /* email body text */
+  --color-ink-700:   rgb(74, 74, 74);    /* email body muted */
+  --color-ink-500:   rgb(107, 107, 94);  /* body muted (warm) */
+  --color-ink-400:   rgb(122, 119, 112); /* small UI label */
+  --color-ink-300:   rgb(122, 130, 115); /* email metadata */
+
+  /* Amber accent (used for italic emphasis lines) */
+  --color-amber-500: rgb(255, 172, 70);
+
+  /* OHP parent-brand colors — appear ONLY in the small glyph mark.
+     Do NOT use these as event UI fills. */
+  --ohp-pink:   rgb(249, 187, 198);
+  --ohp-blue:   rgb(2, 154, 255);
+  --ohp-yellow: rgb(255, 219, 87);
+  --ohp-orange: rgb(255, 174, 69);
+
+  /* ── Semantic tokens ──────────────────────────────────────────── */
+  --bg:               var(--color-cream-100);
+  --bg-alt:           var(--color-cream-50);
+  --bg-dark:          var(--color-green-700);
+  --bg-darker:        var(--color-green-900);
+  --fg:               var(--color-green-700);
+  --fg-muted:         var(--color-ink-500);
+  --fg-on-dark:       var(--color-cream-100);
+  --fg-on-dark-muted: rgba(247, 243, 230, 0.7);
+  --accent:           var(--color-gold-400);
+  --accent-bright:    var(--color-gold-600);
+  --line:             var(--color-gold-300);
+  --line-faint:       rgba(169, 149, 96, 0.3);
+
+  /* ── Type families ─────────────────────────────────────────────
+     Lora is the workhorse: it does both display (weight 600) and body (400/italic).
+     Playfair is reserved for BRAND MOMENTS only — hero wordmark, CTA bookend,
+     printed-program-style marquee headlines. Always at >=48px.
+     Georgia is the email fallback for Lora (same DNA, transitional serif).
+     The primary faces are self-hosted via next/font and arrive on the
+     --next-* variables set on <html> in app/layout.tsx.                       */
+  --font-marquee: var(--next-playfair), "Lora", Georgia, "Times New Roman", serif;
+  --font-display: var(--next-lora), Georgia, "Times New Roman", serif;
+  --font-body:    var(--next-lora), Georgia, "Times New Roman", serif;
+  --font-ui:      var(--next-poppins), "Helvetica Neue", Arial, sans-serif;
+  --font-email-display: Georgia, "Times New Roman", serif;
+  --font-email-body:    Helvetica, Arial, sans-serif;
+  --font-mono:    "Courier New", monospace;
+
+  /* ── Type scale (web) ─────────────────────────────────────────── */
+  --text-eyebrow-size:    12px;
+  --text-eyebrow-track:   3px;
+  --text-eyebrow-weight:  500;
+
+  /* MARQUEE — brand moments only, Playfair, italic-on-a-word lift */
+  --text-marquee-size: 76.8px;   /* Hero wordmark */
+  --text-marquee-lh:   84px;
+  --text-marquee-md:   44.8px;   /* CTA bookend */
+  --text-marquee-md-lh: 51.5px;
+
+  /* DISPLAY — the workhorse, Lora 600 */
+  --text-h1-size:   76.8px;       /* alias of marquee on hero */
+  --text-h1-lh:     84px;
+  --text-h2-size:   40px;         /* section display — Lora 600 */
+  --text-h2-lh:     48px;
+  --text-h3-size:   26px;         /* card titles — Lora 600 */
+  --text-h3-lh:     38px;
+  --text-h4-size:   20px;
+  --text-h4-lh:     30px;
+  --text-eyebrow-date: 15px;      /* "JUNE 29, 2026" gold caps — still Playfair */
+
+  --text-body-size:   17px;
+  --text-body-lh:     27.6px;
+  --text-body-sm:     15px;
+  --text-body-sm-lh:  25.5px;
+  --text-meta:        13px;
+  --text-meta-lh:     20px;
+  --text-button:      14px;
+  --text-button-track: 1.5px;
+
+  /* ── Spacing scale (4px base) ─────────────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-44: 176px;       /* hero top padding */
+
+  /* ── Radii (intentionally restrained) ─────────────────────────── */
+  --radius-none: 0px;       /* DEFAULT — most elements are square */
+  --radius-sm:   2px;       /* tiny dots */
+  --radius-pill: 9999px;    /* badge dots only */
+  /* NO rounded buttons. NO rounded cards. Classic golf-program rectangles. */
+
+  /* ── Borders ──────────────────────────────────────────────────── */
+  --border-hair:  1px solid var(--line);
+  --border-faint: 1px solid var(--line-faint);
+  --border-gold:  1px solid var(--accent);
+  --border-gold-2: 2px solid var(--accent);
+  --border-dark-2: 2px solid var(--color-green-700);
+
+  /* The signature "double frame" — outer line offset 5-6px outside primary border */
+  --frame-outer-offset: 6px;
+
+  /* ── Shadows (used sparingly — print/program aesthetic) ───────── */
+  --shadow-nav:    0 4px 6px -4px rgba(0,0,0,0.10), 0 10px 15px -3px rgba(0,0,0,0.10);
+  --shadow-card:   0 1px 2px rgba(15, 31, 20, 0.04), 0 8px 24px -12px rgba(15, 31, 20, 0.12);
+  --shadow-focus:  0 0 0 3px rgba(169, 149, 96, 0.35);
+
+  /* ── Motion ──────────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-elegant: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 520ms;       /* gold-sweep button hover */
+
+  /* ── Layout ──────────────────────────────────────────────────── */
+  --container: 1200px;
+  --container-narrow: 900px;
+  --nav-h: 60px;
+}
+
+/* ── Base element styles ────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: var(--text-meta);
+  line-height: var(--text-meta-lh);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);  /* Lora */
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+h1 {
+  /* H1 is reserved for the hero wordmark — Playfair, the brand's signature face. */
+  font-family: var(--font-marquee);
+  font-weight: 400;
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-lh);
+  letter-spacing: -0.01em;
+}
+h2 { font-size: var(--text-h2-size); line-height: var(--text-h2-lh); }
+h3 { font-size: var(--text-h3-size); line-height: var(--text-h3-lh); }
+h4 { font-size: var(--text-h4-size); line-height: var(--text-h4-lh); }
+
+/* Brand-marquee headline — use on hero + the CTA bookend.
+   Don't use it on routine section titles. */
+.hh-marquee {
+  font-family: var(--font-marquee);
+  font-weight: 400;
+  font-size: var(--text-marquee-md);
+  line-height: var(--text-marquee-md-lh);
+  letter-spacing: -0.005em;
+  color: var(--fg);
+  margin: 0;
+}
+
+/* italic-emphasis: in headlines, individual words can be italicized to lift them */
+h1 em, h2 em, h3 em, .hh-marquee em {
+  font-style: italic;
+  font-weight: inherit;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-lh);
+  color: var(--fg-muted);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+p.lead { color: var(--fg); }
+p.amber-italic {
+  font-style: italic;
+  color: var(--color-amber-500);
+}
+
+/* Eyebrow — uppercase Poppins with tracking, gold */
+.eyebrow,
+.text-eyebrow {
+  font-family: var(--font-ui);
+  font-weight: var(--text-eyebrow-weight);
+  font-size: var(--text-eyebrow-size);
+  line-height: 16px;
+  letter-spacing: var(--text-eyebrow-track);
+  color: var(--accent);
+  text-transform: uppercase;
+  margin: 0;
+}
+.eyebrow--sm { font-size: 11px; letter-spacing: 2px; }
+
+/* Decorative gold dot + label, used in badges */
+.hh-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border: 1px solid var(--accent);
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.hh-badge::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 99px;
+  background: var(--accent);
+  display: block;
+}
+
+/* Decorative gold rule */
+.hh-rule {
+  width: 80px;
+  height: 2px;
+  background: var(--accent);
+  border: 0;
+  margin: 0;
+}
+.hh-rule--sm { width: 60px; }
+.hh-rule--xs { width: 40px; height: 1px; }
+
+/* Date caps — Playfair (still a brand-moment face), tracked, gold */
+.hh-date-caps {
+  font-family: var(--font-marquee);
+  font-size: var(--text-eyebrow-date);
+  line-height: 22.5px;
+  letter-spacing: 4px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────── */
+
+.hh-btn {
+  --btn-bg: var(--color-green-700);
+  --btn-fg: var(--color-cream-100);
+  --btn-border: var(--color-green-700);
+  --btn-sweep: var(--accent);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--text-button);
+  letter-spacing: var(--text-button-track);
+  line-height: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  border: 2px solid var(--btn-border);
+  overflow: hidden;
+  cursor: pointer;
+  transition: color var(--dur-base) var(--ease-out);
+}
+.hh-btn > span { position: relative; z-index: 1; }
+.hh-btn::before {
+  content: "";
+  position: absolute;
+  inset: 2px -2px 2px -2px;
+  background: var(--btn-sweep);
+  transform: translateX(-101%);
+  transition: transform var(--dur-slow) var(--ease-elegant);
+  z-index: 0;
+}
+.hh-btn:hover::before { transform: translateX(0); }
+.hh-btn:active { transform: translateY(1px); }
+.hh-btn:focus-visible { outline: none; box-shadow: var(--shadow-focus); }
+
+.hh-btn--outline {
+  --btn-bg: transparent;
+  --btn-fg: var(--accent);
+  --btn-border: var(--accent);
+  --btn-sweep: var(--color-green-700);
+}
+.hh-btn--outline:hover { color: var(--color-cream-100); }
+
+.hh-btn--gold {
+  --btn-bg: var(--accent);
+  --btn-fg: var(--color-cream-100);
+  --btn-border: var(--accent);
+  --btn-sweep: var(--color-green-700);
+}
+
+/* ── Frames (the signature double-line) ─────────────────────────── */
+
+.hh-frame {
+  position: relative;
+  border: var(--border-gold-2);
+}
+.hh-frame::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--frame-outer-offset));
+  border: 1px solid var(--line-faint);
+  pointer-events: none;
+}
+
+/* ── Surfaces ───────────────────────────────────────────────────── */
+
+.hh-surface         { background: var(--bg); color: var(--fg); }
+.hh-surface--alt    { background: var(--bg-alt); }
+.hh-surface--dark   { background: var(--bg-dark); color: var(--fg-on-dark); }
+.hh-surface--darker { background: var(--bg-darker); color: var(--fg-on-dark); }
+.hh-surface--dark *,
+.hh-surface--darker * { color: inherit; }
+.hh-surface--dark p,
+.hh-surface--darker p { color: var(--fg-on-dark-muted); }
+
+/* ── Utility ────────────────────────────────────────────────────── */
+
+.hh-container { max-width: var(--container); margin: 0 auto; padding: 0 40px; }
+.hh-container--narrow { max-width: var(--container-narrow); margin: 0 auto; padding: 0 40px; }
+.hh-section { padding: var(--space-24) 0; }
+.hh-section--lg { padding: var(--space-24) 0; }
+
+a { color: inherit; }
+a:focus-visible { outline: none; box-shadow: var(--shadow-focus); }
