@@ -42,11 +42,17 @@ body { background: var(--color-green-700); }
 
 .letter__body { padding: 56px 56px 52px; }
 .letter__body .eyebrow { color: var(--accent); }
+/* Italic Lora overhangs into the following upright glyph ("fifth shot on") */
+.letter__body em { padding-right: 0.06em; }
 .letter__greet { font-family: var(--font-marquee); font-style: italic; font-size: 30px; color: var(--color-green-700); margin: 18px 0 20px; }
 .letter__body p { font-family: var(--font-body); font-size: 17px; line-height: 28px; color: var(--color-green-700); margin: 0 0 16px; }
 .letter__body p em { color: var(--color-green-700); }
-.letter__sign { font-family: var(--font-marquee); font-style: italic; font-size: 28px; color: var(--color-green-700); margin: 28px 0 4px; }
-.letter__sign-role { font-family: var(--font-ui); font-size: 12px; letter-spacing: 0.8px; color: var(--color-ink-500); margin: 0; }
+/* Signature block — scoped under .letter__body so these win over the
+   generic `.letter__body p` paragraph styles */
+.letter__body p.letter__sign { font-family: var(--font-marquee); font-style: italic; font-size: 28px; color: var(--color-green-700); margin: 28px 0 10px; }
+.letter__body p.letter__sig-name { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--color-green-700); margin: 0; }
+.letter__body p.letter__sig-role { font-family: var(--font-ui); font-size: 12px; letter-spacing: 0.8px; color: var(--color-ink-500); margin: 2px 0 0; }
+.letter__sig-logo { height: 22px; width: auto; display: block; margin-top: 10px; }
 .letter__cta { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
 
 /* The ask / covered band — cream */
@@ -112,6 +118,9 @@ body { background: var(--color-green-700); }
 /* Honeypot — must stay invisible to humans */
 .rf__gotcha { display: none !important; }
 
+/* Breathing room above the privacy group, on top of the form's row gap */
+.rf__field--privacy { margin-top: var(--space-2); }
+
 .partners { background: var(--bg); padding: 56px 40px 64px; border-top: 1px solid var(--color-gold-300); }
 .partners__inner { max-width: var(--container); margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 26px; align-items: center; }
 .bfooter { background: var(--color-green-900); padding: 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
@@ -142,7 +151,7 @@ body { background: var(--color-green-700); }
   .letter__body { padding: 30px 20px 34px; }
   .letter__greet { font-size: 25px; margin: 16px 0 14px; }
   .letter__body p { font-size: 16px; line-height: 25.5px; }
-  .letter__sign { font-size: 23px; margin-top: 24px; }
+  .letter__body p.letter__sign { font-size: 23px; margin-top: 24px; }
   .letter__cta { flex-direction: column; gap: 12px; margin-top: 28px; }
   .letter__cta .hh-btn { width: 100%; }
   .ask { padding: 52px 16px; }

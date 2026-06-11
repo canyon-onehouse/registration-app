@@ -21,7 +21,7 @@ export default function MissionStrip() {
         <p>
           The One House Project coordinates crisis-housing providers across
           North Alabama with the funding, services, and data they need to move
-          families from instability to stability — faster, and with dignity.
+          families from instability to stability, faster and with dignity.
           Your day on the course helps fund that work.
         </p>
       </div>

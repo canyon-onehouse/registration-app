@@ -32,10 +32,10 @@ export default function AskSection() {
           One round of golf, <em>for a great cause.</em>
         </h2>
         <p>
-          Our teams play a four-person scramble. You&rsquo;ll join one as a fifth
-          player and guest of honor — relaxed, friendly, and entirely covered.
-          Every team you meet is helping raise money for families in North
-          Alabama working their way back to stability.
+          Our teams play a four-person scramble, and you&rsquo;ll join one as the
+          fifth player. The day is relaxed and friendly, and everything is
+          covered for you. Every team you meet is helping raise money for
+          families in North Alabama working their way back to stability.
         </p>
       </div>
 
@@ -59,8 +59,7 @@ export default function AskSection() {
               </div>
             </div>
             <p className="covered-note">
-              Entry is completely free for guests — there&rsquo;s nothing to pay,
-              ever.
+              Entry is completely free for guests. There is nothing to pay.
             </p>
           </div>
 
@@ -77,7 +76,7 @@ export default function AskSection() {
             <div className="prize-line">
               <span className="prize-line__amt">$5,000</span>
               <span className="prize-line__txt">
-                In on-course prizes — wine, experiences, gift cards, clubs &amp;
+                In on-course prizes: wine, experiences, gift cards, clubs &amp;
                 bags. <strong>Guests are welcome to play for these.</strong>
               </span>
             </div>
