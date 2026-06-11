@@ -22,15 +22,14 @@ npm run dev                        # http://localhost:3000
 
 ### 1. Formspree (where registrations go)
 
-1. Create a free account at [formspree.io](https://formspree.io) (use the email
-   that should receive registrations, or add recipients later).
-2. Click **New form**, name it (e.g. "Hope Classic Guest Registration").
-3. The form's endpoint looks like `https://formspree.io/f/abcdwxyz` — copy the
-   8-character ID at the end.
-4. Set it as `NEXT_PUBLIC_FORMSPREE_ID` (in `.env.local` locally, and in Vercel
-   for deploys — see below).
-5. In the Formspree dashboard you can add notification recipients (e.g.
-   `bo@onehouseproject.com`), see all submissions, and export CSV.
+The production form is already created — `https://formspree.io/f/mykadjwp` —
+and its ID is baked into the code as the default, so no configuration is
+needed for the form to work. `NEXT_PUBLIC_FORMSPREE_ID` exists as an optional
+override (e.g. to point a test deployment at a separate form so trial
+submissions don't mix with real registrations).
+
+In the Formspree dashboard you can add notification recipients (e.g.
+`bo@onehouseproject.com`), see all submissions, and export CSV.
 
 Spam protection: the form already includes Formspree's `_gotcha` honeypot field
 (invisible to humans; submissions that fill it are silently discarded), plus
@@ -45,11 +44,12 @@ subject line "New guest registration — Huntsville Hope Classic".
 1. [vercel.com/new](https://vercel.com/new) → import this GitHub repository.
    Vercel auto-detects Next.js; no settings need changing.
 2. **Before the first deploy**, under *Environment Variables* add:
-   - `NEXT_PUBLIC_FORMSPREE_ID` — the Formspree form ID from step 1
    - `NEXT_PUBLIC_SITE_URL` — the final public URL, e.g.
      `https://classic.onehouseproject.com` (used for link-preview metadata;
      you can start with the `*.vercel.app` URL and update it once the custom
      domain is live, then redeploy)
+   - `NEXT_PUBLIC_FORMSPREE_ID` — optional; only to override the baked-in
+     production form (see step 1)
 3. Deploy. Every push to the production branch redeploys automatically.
 
 ### 3. Custom domain (subdomain of onehouseproject.com)

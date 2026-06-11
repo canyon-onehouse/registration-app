@@ -5,8 +5,11 @@ import { useRegistration } from "./RegistrationContext";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Formspree form IDs are public by design (they ship in the page source),
+// so the live form's ID is the baked-in default; the env var overrides it
+// (e.g. to point staging at a different form).
 const FORMSPREE_ENDPOINT = `https://formspree.io/f/${
-  process.env.NEXT_PUBLIC_FORMSPREE_ID ?? ""
+  process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "mykadjwp"
 }`;
 
 type FieldName = "name" | "email" | "phone" | "affiliation" | "privacy";
