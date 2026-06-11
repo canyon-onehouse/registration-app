@@ -80,6 +80,14 @@ export default function AskSection() {
                 bags. <strong>Guests are welcome to play for these.</strong>
               </span>
             </div>
+            <div className="prize-line">
+              <span className="prize-line__amt">$500</span>
+              <span className="prize-line__txt">
+                Voucher to Club Champion for a free fitting, plus a gift bag
+                with gifts from our sponsors.{" "}
+                <strong>Every registrant comes away with both.</strong>
+              </span>
+            </div>
           </div>
         </div>
 
