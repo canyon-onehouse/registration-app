@@ -71,7 +71,7 @@ body { background: var(--color-green-700); }
 
 .prize-inline { margin-top: 36px; border-top: 1px solid var(--color-gold-300); padding-top: 28px; }
 .prize-inline h3 { font-family: var(--font-display); font-weight: 600; font-size: 22px; margin: 0 0 8px; }
-.prize-line { display: flex; align-items: baseline; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line-faint); }
+.prize-line { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line-faint); }
 .prize-line__amt { font-family: var(--font-display); font-weight: 600; font-size: 26px; color: var(--accent); min-width: 110px; }
 .prize-line__txt { font-family: var(--font-body); font-size: 14px; line-height: 21px; color: var(--color-ink-500); }
 .prize-line__txt strong { display: block; margin-top: 4px; color: var(--color-green-700); font-weight: 600; }

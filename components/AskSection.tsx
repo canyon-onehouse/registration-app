@@ -1,10 +1,21 @@
 const facts = [
-  { label: "Date", value: <>Monday, June 29, 2026</> },
+  {
+    label: "Date",
+    value: (
+      <>
+        Monday, June 29, 2026
+        <br />
+        Course open at 9 AM
+      </>
+    ),
+  },
   {
     label: "Location",
     value: (
       <>
         Canebrake Club
+        <br />
+        23015 Founders Cir
         <br />
         Athens, AL 35613
       </>
