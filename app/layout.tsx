@@ -27,18 +27,18 @@ const poppins = Poppins({
 });
 
 const description =
-  "A personal invitation from Bo Matthews: join the inaugural Huntsville Hope Classic as a special guest — Monday, June 29, 2026 at Canebrake Club, Athens, AL. Green fees, lunch, and drinks are covered.";
+  "A personal invitation from Bo Matthews: join the inaugural Huntsville Hope Classic as a special guest on Monday, June 29, 2026 at Canebrake Club in Athens, AL. Green fees, lunch, and drinks are covered.";
 
 export const metadata: Metadata = {
   metadataBase: process.env.NEXT_PUBLIC_SITE_URL
     ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
     : undefined,
-  title: "A Note from Bo — Guest Registration · Huntsville Hope Classic",
+  title: "A Note from Bo · Guest Registration · Huntsville Hope Classic",
   description,
   // Invite-only page: shareable by link, but kept out of search engines.
   robots: { index: false, follow: false },
   openGraph: {
-    title: "A Note from Bo — Guest Registration",
+    title: "A Note from Bo · Guest Registration",
     description:
       "Join the Huntsville Hope Classic as a special guest. June 29, 2026 · Canebrake Club · free for invited guests.",
     url: "/",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "A Note from Bo — Guest Registration",
+    title: "A Note from Bo · Guest Registration",
     description:
       "Join the Huntsville Hope Classic as a special guest. June 29, 2026 · Canebrake Club · free for invited guests.",
     images: ["/og.jpg"],

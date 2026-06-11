@@ -30,25 +30,32 @@ export default function LetterHero() {
             to help our neighbors find their footing.
           </p>
           <p>
-            This June, we&rsquo;re hosting our very first charity golf tournament —
-            and I&rsquo;d love for you to join us as a special guest. You&rsquo;d play as
-            the <em>fifth shot</em> on a team: a celebrity in the rotation,
-            swinging alongside folks who&rsquo;ll never forget the day.
+            This June we&rsquo;re hosting our first charity golf tournament, and
+            I&rsquo;d love for you to join us as a special guest. You&rsquo;d play as
+            the <em>fifth shot</em> on one of our teams, swinging in the
+            rotation right alongside the players.
           </p>
           <p>
-            It won&rsquo;t cost you a thing. Your green fees, your food, your drinks
-            — all on us. All I&rsquo;m really asking for is your name beside a good
-            cause. And if you&rsquo;d rather keep things quiet, that&rsquo;s perfectly
-            fine too.
+            It won&rsquo;t cost you a thing. Your green fees, your food, and your
+            drinks are all on us. All I&rsquo;m asking is that you come play some
+            golf with us. You don&rsquo;t have to be recognized or mentioned
+            anywhere. Your presence alone will make the day a success and give
+            our donors a reason to come back next year.
           </p>
-          <p>It would mean the world to have you out there.</p>
+          <p>I hope to see you out there.</p>
           <p className="letter__sign">— Bo</p>
-          <p className="letter__sign-role">
-            Bo Matthews · Founder &amp; Board Chair, The One House Project
-          </p>
+          <div className="letter__sig-block">
+            <p className="letter__sig-name">Bo Matthews</p>
+            <p className="letter__sig-role">Founder &amp; Board Chairman</p>
+            <img
+              className="letter__sig-logo"
+              src="/assets/logo-ohp-color.svg"
+              alt="The One House Project"
+            />
+          </div>
           <div className="letter__cta">
             <a className="hh-btn hh-btn--gold" href="#register">
-              <span>Count Me In — It&rsquo;s Free</span>
+              <span>Count Me In · It&rsquo;s Free</span>
             </a>
             <a className="hh-btn hh-btn--outline" href="#details">
               <span>The Details</span>

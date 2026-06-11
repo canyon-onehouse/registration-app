@@ -9,8 +9,8 @@ export default function RegisterSection() {
           Say <em>yes</em>
         </h2>
         <p>
-          A minute now, and we&rsquo;ll handle the rest — team placement and
-          day-of details to follow.
+          It takes about a minute. We&rsquo;ll follow up with your team placement
+          and day-of details.
         </p>
       </div>
       <div className="formcard">

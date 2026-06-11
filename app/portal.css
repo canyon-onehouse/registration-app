@@ -80,21 +80,15 @@
 }
 .rf__err.show { display: block; }
 
-/* Anonymity radio group — the reassuring callout */
+/* Anonymity radio group — styled like the other fields: label above,
+   quiet bordered box below (deliberately de-emphasized) */
 .rf__privacy {
-  border: 1px solid var(--accent);
-  background: rgba(169, 149, 96, 0.06);
+  border: 1px solid var(--color-gold-300);
   padding: var(--space-5) var(--space-6);
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
-.rf__privacy-head {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-.rf__privacy-head .eyebrow { color: var(--accent); }
 .rf__privacy-note {
   font-family: var(--font-body);
   font-style: italic;

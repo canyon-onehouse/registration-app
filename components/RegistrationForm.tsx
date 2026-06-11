@@ -109,9 +109,9 @@ export default function RegistrationForm() {
             Thank you, <span data-success-name>{firstName}</span>.
           </h3>
           <p style={{ maxWidth: 440 }}>
-            I&rsquo;ve got your registration, and I couldn&rsquo;t be more glad you&rsquo;re
-            joining us. We&rsquo;ll be in touch with your team placement before June
-            26. See you at Canebrake.
+            I&rsquo;ve got your registration, and I&rsquo;m glad you&rsquo;re joining us.
+            We&rsquo;ll be in touch with your team placement before June 26. See
+            you at Canebrake.
           </p>
           <p
             style={{
@@ -230,7 +230,7 @@ export default function RegistrationForm() {
         </div>
         <div className="rf__field">
           <label className="rf__label" htmlFor="b-team">
-            Team(s) &amp; Era <span className="opt">— optional</span>
+            Team(s) &amp; Era <span className="opt">(optional)</span>
           </label>
           <input
             className="rf__input"
@@ -241,49 +241,52 @@ export default function RegistrationForm() {
           />
         </div>
 
-        <div className="rf__privacy" data-field="privacy">
-          <div className="rf__privacy-head">
-            <span className="eyebrow">Recognition &amp; Privacy</span>
-          </div>
-          <p className="rf__privacy-note">
-            No one is required to be publicly mentioned. You&rsquo;re welcome to
-            join and stay completely anonymous — just tell us your preference
-            and we&rsquo;ll honor it.
-          </p>
-          <div className="rf__choices">
-            <label className="rf__choice">
-              <input
-                type="radio"
-                name="privacy"
-                value="recognize"
-                onChange={() => clearError("privacy")}
-              />
-              <span className="rf__radio"></span>
-              <span className="rf__choice-txt">
-                <span className="rf__choice-title">Happy to be recognized</span>
-                <span className="rf__choice-sub">
-                  You may list my name and use my likeness in event materials.
+        <div className="rf__field rf__field--privacy" data-field="privacy">
+          <span className="rf__label">Recognition &amp; Privacy</span>
+          <div className="rf__privacy">
+            <p className="rf__privacy-note">
+              No one is required to be publicly mentioned. You&rsquo;re welcome to
+              join and stay completely anonymous. Tell us your preference and
+              we&rsquo;ll honor it.
+            </p>
+            <div className="rf__choices">
+              <label className="rf__choice">
+                <input
+                  type="radio"
+                  name="privacy"
+                  value="recognize"
+                  onChange={() => clearError("privacy")}
+                />
+                <span className="rf__radio"></span>
+                <span className="rf__choice-txt">
+                  <span className="rf__choice-title">
+                    Happy to be recognized
+                  </span>
+                  <span className="rf__choice-sub">
+                    You may list my name on the event website and marketing
+                    materials.
+                  </span>
                 </span>
-              </span>
-            </label>
-            <label className="rf__choice">
-              <input
-                type="radio"
-                name="privacy"
-                value="anonymous"
-                onChange={() => clearError("privacy")}
-              />
-              <span className="rf__radio"></span>
-              <span className="rf__choice-txt">
-                <span className="rf__choice-title">
-                  Please keep me anonymous
+              </label>
+              <label className="rf__choice">
+                <input
+                  type="radio"
+                  name="privacy"
+                  value="anonymous"
+                  onChange={() => clearError("privacy")}
+                />
+                <span className="rf__radio"></span>
+                <span className="rf__choice-txt">
+                  <span className="rf__choice-title">
+                    Please keep me anonymous
+                  </span>
+                  <span className="rf__choice-sub">
+                    I&rsquo;d like to attend without any public mention. Don&rsquo;t
+                    list my name.
+                  </span>
                 </span>
-                <span className="rf__choice-sub">
-                  I&rsquo;d like to attend without any public mention. Don&rsquo;t list
-                  my name.
-                </span>
-              </span>
-            </label>
+              </label>
+            </div>
           </div>
           <span className={errClass("privacy")}>
             Please choose a preference.
@@ -292,7 +295,7 @@ export default function RegistrationForm() {
 
         <div className="rf__field">
           <label className="rf__label" htmlFor="b-notes">
-            A note for Bo <span className="opt">— optional</span>
+            A note for Bo <span className="opt">(optional)</span>
           </label>
           <textarea
             className="rf__textarea"
