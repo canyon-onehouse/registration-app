@@ -36,11 +36,14 @@ export default function LetterHero() {
             rotation right alongside the players.
           </p>
           <p>
-            It won&rsquo;t cost you a thing. Your green fees, your food, and your
-            drinks are all on us. All I&rsquo;m asking is that you come play some
-            golf with us. You don&rsquo;t have to be recognized or mentioned
-            anywhere. Your presence alone will make the day a success and give
-            our donors a reason to come back next year.
+            <strong>
+              It won&rsquo;t cost you a thing. Your green fees, your food, and
+              your drinks are all on us.
+            </strong>{" "}
+            All I&rsquo;m asking is that you come play some golf with us. You
+            don&rsquo;t have to be recognized or mentioned anywhere. Your presence
+            alone will make the day a success and give our donors a reason to
+            come back next year.
           </p>
           <p>I hope to see you out there.</p>
           <p className="letter__sign">— Bo</p>
